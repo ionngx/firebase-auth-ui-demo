@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ionngx-firebase-auth-ui": {
+      "hosting": {
+        "app": [
+          "ionngx-firebase-auth-ui"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ionngx-firebase-auth-ui"
+  }
+}

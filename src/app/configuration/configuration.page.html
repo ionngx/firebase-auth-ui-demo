@@ -1,0 +1,332 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-toggle>
+        <ion-menu-button></ion-menu-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>Configuration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>
+    During initialisation of the library you can provide a configuration object to override some or all of the
+    configuration options.
+    If a value is not provided during initialisation the default is used. The following options are available.
+  </p>
+  <h3>Options</h3>
+
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>enableFirestoreSync</h5>
+      <p>Indicates whether user details should by synced into the Firestore database associated with the project</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>guardFallbackRoute</h5>
+      <p>The route to navigate to when an unauthenticated user attempts to access a protected route</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>/</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signInSuccessRoute</h5>
+      <p>The route to navigate to when a user successfully authenticates</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>/</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>guardProtectedRoutesUntilEmailIsVerified</h5>
+      <p>Indicates whether to prevent access to routes protected by the built in guard until email verification is
+        complete</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>true</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>passwordMaxLength</h5>
+      <p>Maximum length allowed for passwords when creating emai/password accounts</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>number</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>60</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>passwordMinLength</h5>
+      <p>Minimum length allowed for passwords when creating email/password accounts</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>number</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>requireEmailVerification</h5>
+      <p>Indicates whether user email must be verified when creating email/password accounts</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>showToastMessageOnAuthenticationFailure</h5>
+      <p>Indicates whether to show a toast message when user authentication fails</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>true</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>showToastMessageOnAuthenticationSuccess</h5>
+      <p>Indicates whether to show a toast message when user authentication succeeds</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>boolean</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>true</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signInLabel</h5>
+      <p>The label to display on the button provided to initiate signing in</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>Sign In</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signInRoute</h5>
+      <p>The route to navigate to when the user initiates sign in, if not specified the sign in component will be
+        displayed in a modal</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signOutLabel</h5>
+      <p>The label to display on the button provided to initiate signing out</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>Sign Out</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signOutRoute</h5>
+      <p>The route to navigate to when the user initiates sign out, if not specified the user will be signed out and
+        returned to the application root</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signUpLabel</h5>
+      <p>The label to display on the button provided to initiate signing up</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>Sign Up</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signUpRoute</h5>
+      <p>The route to navigate to when the user initiates sign up, if not specified the sign up component will be
+        displayed in a modal</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>viewProfileLabel</h5>
+      <p>The label to display on the button provided to initiate loading the users profile</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>Profile</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>viewProfileRoute</h5>
+      <p>The route to navigate to when the user initiates view profile, if not specified the user profile component will
+        be displayed in a modal</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</ion-content>

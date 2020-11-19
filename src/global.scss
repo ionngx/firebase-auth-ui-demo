@@ -10,17 +10,58 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import '~@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+$attribute-section-border: solid 1px gray;
+
+ion-content {
+  p {
+    padding: 0.5em;
+  }
+
+  h3, h4 {
+      margin-left: 0.25em;
+  }  
+}
+
+.attribute-section {
+    margin: 1em;
+    border: $attribute-section-border;
+
+    .attribute-section-header {
+        padding: 1em;
+        background-color: lightgray;
+        border-bottom: $attribute-section-border;
+        
+      h5 {
+          font-weight: bold;
+      }
+    }
+
+    table {
+        margin: 0.5em;
+
+        tr {
+            td {
+                padding: 0.5em;
+            }
+            
+            td:first-child {
+                width: 150px;
+            }
+        }
+    }
+}

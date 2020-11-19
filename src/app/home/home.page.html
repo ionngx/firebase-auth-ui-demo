@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-toggle slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Ionic-Angular Firebase Authentication</h2>
+  <p>
+    The library provides UI components for integrating an Ionic-Angular application with Firebase Authentication. This
+    Ionic-Angular application
+    demonstrates the usage and capabilities of the library. It demonstrates the following components.
+  </p>
+  <ul>
+    <li>IonngxFirebaseAuthUi</li>
+    <li>IonngxFirebaseAuthAvatar</li>
+  </ul>
+
+  <h3>Installation</h3>
+  <p>
+    The library relies on Angular Fire for accessing Firebase Authentication and we assume you will be using it to
+    access
+    other Firebase features such as Firestore so we declare a peer dependecy on @angular/fire rather than including it
+    in
+    the project. Follow the <a href='https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md'>Angular Fire Getting Started
+  Guide</a> to setup your app.
+  </p>
+
+  <p>
+    Once your application is prepared for Angular Fire install this library using npm or yarn with one of the following
+    commands:
+  </p>
+
+  <pre>
+    npm install @ionngx/firebase-auth-ui
+    
+    or
+
+    yarn add @ionngx/firebase-auth-ui  
+  </pre>
+
+  <h3>Configuration</h3>
+  <p>
+    Before using any of the components you will need to import and configure the <em>IonngxFirebaseAuthModule</em>.
+    First in
+    <em>app.module.ts</em> or a similar module where you are handing global initialisation, import the module.
+  </p>
+
+  <pre>
+    import {{'{'}} IonngxFirebaseAuthModule {{'}'}} from '@ionngx/firebase-auth-ui';
+  </pre>
+
+  <p>
+    Next you will need to initialise the module with your Firebase app configuration and some library specific settings.
+    We recommend storing these settings in Angular environments, where you can have different accounts or settings for
+    each environment e.g development and production. However you are free to use inline configuration.
+  </p>
+
+  <p>
+    We typically use the following <em>environment.ts</em>. We have removed some identifiers, but of course realise you
+    can get
+    them from the source repo if so inclined. The *firebaseConfig* settings were added as we setup the app for Angular
+    Fire, (you have done this right?). We have added *appName* and <em>IonngxFirebaseAuthConfig</em> the latter matches
+    the
+    defaults used if you don't override them.
+  </p>
+
+  <pre>
+    // environment.ts
+    export const environment = {{'{'}}
+      production: false,
+      firebaseConfig: {{'{'}}
+        apiKey: '...',
+        authDomain: 'ionngx-firebase-auth-ui.firebaseapp.com',
+        databaseURL: 'https://ionngx-firebase-auth-ui.firebaseio.com',
+        projectId: 'ionngx-firebase-auth-ui',
+        storageBucket: 'ionngx-firebase-auth-ui.appspot.com',
+        messagingSenderId: '...',
+        appId: '...'
+      {{'}'}},
+      appName: 'Firebase Auth with Ionic & Angular - Dev',
+      ionngxFirebaseAuthConfig: {{'{'}}
+        enableFirestoreSync: true,
+        guardFallbackRoute: '/',
+        signInSuccessRoute: '/',
+        guardProtectedRoutesUntilEmailIsVerified: true,
+        passwordMaxLength: 60,
+        passwordMinLength: 8,
+        requireEmailVerification: true,
+        showToastMessageOnAuthenticationSuccess: true,
+        showToastMessageOnAuthenticationFailure: true
+      {{'}'}}
+    {{'}'}}
+  </pre>
+
+  <p>
+    So in our <em>app.module.ts</em> we can initialise the <em>IonngxFirebaseAuthModule</em> like this
+  </p>
+
+  <pre>
+    // app.module.ts
+
+    @NgModule({{'{'}}
+      declarations: [AppComponent],
+      imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        IonngxFirebaseAuthModule.forRoot(environment.firebaseConfig,
+          () => environment.appName, environment.IonngxFirebaseAuthConfig)
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+      {{'}'}})
+    export class AppModule {{'{'}} {{'}'}}
+  </pre>
+
+
+  <h3>Usage</h3>
+  <p>
+    The remainder of pages in this application provide guides and working examples of each component in the library. Use
+    the menu to navigate to pages of interest
+  </p>
+</ion-content>
