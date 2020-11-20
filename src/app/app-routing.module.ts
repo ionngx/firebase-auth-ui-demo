@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'configuration',
     loadChildren: () => import('./configuration/configuration.module').then( m => m.ConfigurationPageModule)
   },
+  {
+    path: 'sign-in',
+    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+  },
+  {
+    path: 'provider-bar',
+    loadChildren: () => import('./provider-bar/provider-bar.module').then( m => m.ProviderBarPageModule)
+  },
 ];
 
 @NgModule({

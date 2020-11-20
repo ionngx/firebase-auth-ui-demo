@@ -11,24 +11,37 @@
 
 <ion-content>
   <p>
-    The Avatar component allows you to display the authenticated status of users and optionally a user focused popup. It
-    supports two modes, Default and Simple. In both modes the default behaviour is to display the
+    The Avatar component allows you to display the authenticated status of users
+    and optionally a user focused popup. It supports two modes, Default and
+    Simple. In both modes the default behaviour is to display the
     <ion-icon ios="person-circle-outline" md="person-circle-sharp"></ion-icon>
-    icon as a placeholder when the user is not signed in. However you can change this to hide the Avatar component when
-    the user is not signed in.
+    icon as a placeholder when the user is not signed in. However you can change
+    this to hide the Avatar component when the user is not signed in.
   </p>
   <p>
-    A common use case for the Avatar component is to provide the user with a simple way to sign in/out and see their
-    status from a heaader or navigation bar as this demo application does.
+    A common use case for the Avatar component is to provide the user with a
+    simple way to sign in/out and see their status from a heaader or navigation
+    bar as this demo application does.
   </p>
   <h3>Try It Out</h3>
   <p>
-    An instance of the Avatar component is declared directly below this paragraph. The attributes you can use to control
-    it are detailed below. Each item contains a control that allows you to experiment with the configuration and see the
-    effect. <em>To see the effect of most changes you will need to click on the avatar icon</em>
+    An instance of the Avatar component is declared directly below this
+    paragraph. The attributes you can use to control it are detailed below. Each
+    item contains a control that allows you to experiment with the configuration
+    and see the effect.
+    <em
+      >To see the effect of most changes you will need to click on the avatar
+      icon</em
+    >
   </p>
-  <ionngx-firebase-auth-ui-avatar [mode]="selectedMode" [hideWhenAnonymous]="hideWhenAnonymous" [canSignIn]="canSignIn"
-    [canSignOut]="canSignOut" [canSignUp]="canSignUp" [canViewProfile]="canViewProfile">
+  <ionngx-firebase-auth-ui-avatar
+    [mode]="selectedMode"
+    [hideWhenAnonymous]="hideWhenAnonymous"
+    [canSignIn]="canSignIn"
+    [canSignOut]="canSignOut"
+    [canSignUp]="canSignUp"
+    [canViewProfile]="canViewProfile"
+  >
   </ionngx-firebase-auth-ui-avatar>
   <h4>Current Settings</h4>
   <ion-grid>
@@ -66,11 +79,26 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <h4>Usage</h4>
-  <ion-item>
-    <span class="element-leader"
-      >&lt;ionngx-firebase-auth-ui-avatar &gt;&lt;ionngx-primeng-firebase-auth-ui-avatar&gt;</span>
-  </ion-item>
+  <h4>Usage</h4> <p>
+    To use the Avatar component you need to import the module for it into the module
+    containing the host component
+  </p>
+  <pre>
+    import {{'{'}} AvatarModule {{'}'}} from '@ionngx/firebase-auth-ui';
+  </pre>
+  <p>
+    Then you can use the declare the Avatar in the host component template
+  </p>
+  <pre>
+    &lt;ionngx-firebase-auth-ui-avatar
+      [mode]="selectedMode"
+      [hideWhenAnonymous]="hideWhenAnonymous"
+      [canSignIn]="canSignIn"
+      [canSignOut]="canSignOut"
+      [canSignUp]="canSignUp"
+      [canViewProfile]="canViewProfile"&gt;
+    &lt;/ionngx-firebase-auth-ui-avatar&gt;
+  </pre>
   <h4>Attributes</h4>
   <section class="attribute-section">
     <section class="attribute-section-header">
@@ -119,7 +147,10 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>hideWhenAnonymous</h5>
-      <p>Indicates whether the component should hide the placeholder icon when the user is signed out</p>
+      <p>
+        Indicates whether the component should hide the placeholder icon when
+        the user is signed out
+      </p>
     </section>
     <table>
       <tbody>
@@ -141,7 +172,10 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>canSignIn</h5>
-      <p>Indicates whether the component should provide a button for the user to sign in</p>
+      <p>
+        Indicates whether the component should provide a button for the user to
+        sign in
+      </p>
     </section>
     <table>
       <tbody>
@@ -163,7 +197,10 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>canSignOut</h5>
-      <p>Indicates whether the component should provide a button for the user to sign out</p>
+      <p>
+        Indicates whether the component should provide a button for the user to
+        sign out
+      </p>
     </section>
     <table>
       <tbody>
@@ -185,7 +222,10 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>canSignUp</h5>
-      <p>Indicates whether the component should provide a button for the user to sign up</p>
+      <p>
+        Indicates whether the component should provide a button for the user to
+        sign up
+      </p>
     </section>
     <table>
       <tbody>
@@ -207,7 +247,10 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>canViewProfile</h5>
-      <p>Indicates whether the component should provide a button to load the users profile</p>
+      <p>
+        Indicates whether the component should provide a button to load the
+        users profile
+      </p>
     </section>
     <table>
       <tbody>

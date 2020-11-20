@@ -14,5 +14,15 @@ export const PAGES: Page[] = [
         title: 'Avatar',
         url: '/avatar',
         icon: 'person-circle'
+    },
+    {
+        title: 'Provider Bar',
+        url: '/provider-bar',
+        icon: 'ellipsis-horizontal'
+    },
+    {
+        title: 'Sign In',
+        url: '/sign-in',
+        icon: 'enter'
     }
 ];
