@@ -10,5 +10,69 @@
 </ion-header>
 
 <ion-content>
-
+  <p>
+    The Sign In component provides a single user interface that combines inputs
+    for Email/Password authentication and buttons for provider authentication
+    such as Google, Facebook etc. I supports two modes <em>bar</em> or
+    <em>stack</em>.
+  </p>
+  <p>
+    In <em>bar</em> mode the Provider Bar component is displayed below the input
+    form.
+  </p>
+  <p>
+    In <em>stack</em> mode the Provider Stack component provides the buttons,
+    which act responsively displaying to the right of the input form if space
+    allows otherwise below the input form.
+  </p>
+  <h3>Try It Out</h3>
+  <p>
+    An instance of the Sign In component is declared directly below this
+    paragraph. The attributes you can use to control it are detailed below. Use
+    the controls below to test the effect of different settings.
+  </p>
+  <ionngx-firebase-auth-ui-sign-in
+    [mode]="selectedMode"
+  ></ionngx-firebase-auth-ui-sign-in>
+  <h4>Current Settings</h4>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-lg="3"> mode</ion-col>
+      <ion-col size="6" size-lg="3">
+        <ion-select [(ngModel)]="selectedMode">
+          <ion-select-option value="bar">Bar</ion-select-option>
+          <ion-select-option value="stack">Stack</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <h4>Usage</h4>
+  <p>This page declares the Sign In component in the template like this</p>
+  <pre>
+    &lt;ionngx-firebase-auth-ui-sign-in
+      [mode]="selectedMode"&gt;
+    &lt;/ionngx-firebase-auth-ui-sign-in&gt;
+  </pre>
+  <h4>Attributes</h4>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>mode</h5>
+      <p>
+        The mode the component should operate in. In bar mode it display the
+        Provider Bar. In stack mode it displays the Provider Stack
+      </p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>'bar' | 'stack'</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>bar</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 </ion-content>

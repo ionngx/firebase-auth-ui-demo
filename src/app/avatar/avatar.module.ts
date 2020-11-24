@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { AvatarModule } from '@ionngx/firebase-auth-ui';
+
+import { IonngxFirebaseAuthUiModule } from '@ionngx/firebase-auth-ui';
 
 import { AvatarPageRoutingModule } from './avatar-routing.module';
 
@@ -15,7 +16,7 @@ import { AvatarPage } from './avatar.page';
     FormsModule,
     IonicModule,
     AvatarPageRoutingModule,
-    AvatarModule
+    IonngxFirebaseAuthUiModule.forChild()
   ],
   declarations: [AvatarPage]
 })

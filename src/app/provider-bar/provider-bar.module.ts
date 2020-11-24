@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProviderBarModule } from '@ionngx/firebase-auth-ui';
+import { IonngxFirebaseAuthUiModule } from '@ionngx/firebase-auth-ui';
 
 import { ProviderBarPageRoutingModule } from './provider-bar-routing.module';
 
@@ -16,7 +16,7 @@ import { ProviderBarPage } from './provider-bar.page';
     FormsModule,
     IonicModule,
     ProviderBarPageRoutingModule,
-    ProviderBarModule
+    IonngxFirebaseAuthUiModule.forChild()
   ],
   declarations: [ProviderBarPage]
 })

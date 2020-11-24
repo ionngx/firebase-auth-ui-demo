@@ -26,13 +26,9 @@
   <h3>Try It Out</h3>
   <p>
     An instance of the Avatar component is declared directly below this
-    paragraph. The attributes you can use to control it are detailed below. Each
-    item contains a control that allows you to experiment with the configuration
-    and see the effect.
-    <em
-      >To see the effect of most changes you will need to click on the avatar
-      icon</em
-    >
+    paragraph. The attributes you can use to control it are detailed below.
+    Use the controls below to test the effect of different settings.
+    <em>To see the effect of most changes you will need to click on the avatar icon</em>
   </p>
   <ionngx-firebase-auth-ui-avatar
     [mode]="selectedMode"
@@ -48,7 +44,7 @@
     <ion-row>
       <ion-col size="6" size-lg="3"> mode</ion-col>
       <ion-col size="6" size-lg="3">
-        <ion-select [value]="selectedMode">
+        <ion-select [(ngModel)]="selectedMode">
           <ion-select-option value="default">Default</ion-select-option>
           <ion-select-option value="simple">Simple</ion-select-option>
         </ion-select>
@@ -79,16 +75,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <h4>Usage</h4> <p>
-    To use the Avatar component you need to import the module for it into the module
-    containing the host component
-  </p>
-  <pre>
-    import {{'{'}} AvatarModule {{'}'}} from '@ionngx/firebase-auth-ui';
-  </pre>
-  <p>
-    Then you can use the declare the Avatar in the host component template
-  </p>
+  <h4>Usage</h4>  
+  <p>This page declares the Avatar component in the template like this</p>
   <pre>
     &lt;ionngx-firebase-auth-ui-avatar
       [mode]="selectedMode"

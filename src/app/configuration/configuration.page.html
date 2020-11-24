@@ -34,29 +34,28 @@
         </tr>
       </tbody>
     </table>
-  </section>
-  <section class="attribute-section">
+  </section> <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>guardFallbackRoute</h5>
-      <p>The route to navigate to when an unauthenticated user attempts to access a protected route</p>
+      <h5>firestoreCollectionName</h5>
+      <p>The name of the collection to use when synching users</p>
     </section>
     <table>
       <tbody>
         <tr>
           <td>Type</td>
-          <td>string | string[]</td>
+          <td>string</td>
         </tr>
         <tr>
           <td>Default</td>
-          <td>/</td>
+          <td>users</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>signInSuccessRoute</h5>
-      <p>The route to navigate to when a user successfully authenticates</p>
+      <h5>guardFallbackRoute</h5>
+      <p>The route to navigate to when an unauthenticated user attempts to access a protected route</p>
     </section>
     <table>
       <tbody>
@@ -129,7 +128,7 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>providers</h5>
-      <p>List of authentication providers support by the app</p>
+      <p>List of authentication providers supported by your app</p>
     </section>
     <table>
       <tbody>
@@ -164,8 +163,8 @@
   </section>
   <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>showToastMessageOnAuthenticationFailure</h5>
-      <p>Indicates whether to show a toast message when user authentication fails</p>
+      <h5>showToastMessageOnFailure</h5>
+      <p>Indicates whether to show a toast message when an operation fails</p>
     </section>
     <table>
       <tbody>
@@ -182,8 +181,8 @@
   </section>
   <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>showToastMessageOnAuthenticationSuccess</h5>
-      <p>Indicates whether to show a toast message when user authentication succeeds</p>
+      <h5>showToastMessageOnSuccess</h5>
+      <p>Indicates whether to show a toast message when an operation succeeds</p>
     </section>
     <table>
       <tbody>
@@ -194,24 +193,6 @@
         <tr>
           <td>Default</td>
           <td>true</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <section class="attribute-section">
-    <section class="attribute-section-header">
-      <h5>signInLabel</h5>
-      <p>The label to display on the button provided to initiate signing in</p>
-    </section>
-    <table>
-      <tbody>
-        <tr>
-          <td>Type</td>
-          <td>string</td>
-        </tr>
-        <tr>
-          <td>Default</td>
-          <td>Sign In</td>
         </tr>
       </tbody>
     </table>
@@ -219,7 +200,7 @@
   <section class="attribute-section">
     <section class="attribute-section-header">
       <h5>signInRoute</h5>
-      <p>The route to navigate to when the user initiates sign in, if not specified the sign in component will be
+      <p>A route to navigate to when the user initiates sign in, if not specified the sign in component will be
         displayed in a modal</p>
     </section>
     <table>
@@ -237,18 +218,54 @@
   </section>
   <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>signOutLabel</h5>
-      <p>The label to display on the button provided to initiate signing out</p>
+      <h5>signInSuccessCallback</h5>
+      <p>A function to call when the user signs in successfully</p>
     </section>
     <table>
       <tbody>
         <tr>
           <td>Type</td>
-          <td>string</td>
+          <td>(credential: firebase.auth.UserCredential) => void</td>
         </tr>
         <tr>
           <td>Default</td>
-          <td>Sign Out</td>
+          <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signInSuccessRoute</h5>
+      <p>A route to navigate to when a user successfully authenticates</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string | string[]</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>/</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signOutCallback</h5>
+      <p>A function to call when the user signs out</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>() => void</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>undefined</td>
         </tr>
       </tbody>
     </table>
@@ -274,24 +291,6 @@
   </section>
   <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>signUpLabel</h5>
-      <p>The label to display on the button provided to initiate signing up</p>
-    </section>
-    <table>
-      <tbody>
-        <tr>
-          <td>Type</td>
-          <td>string</td>
-        </tr>
-        <tr>
-          <td>Default</td>
-          <td>Sign Up</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <section class="attribute-section">
-    <section class="attribute-section-header">
       <h5>signUpRoute</h5>
       <p>The route to navigate to when the user initiates sign up, if not specified the sign up component will be
         displayed in a modal</p>
@@ -311,18 +310,36 @@
   </section>
   <section class="attribute-section">
     <section class="attribute-section-header">
-      <h5>viewProfileLabel</h5>
-      <p>The label to display on the button provided to initiate loading the users profile</p>
+      <h5>signUpSuccessCallback</h5>
+      <p>A function to call when the user signs up successfully</p>
     </section>
     <table>
       <tbody>
         <tr>
           <td>Type</td>
-          <td>string</td>
+          <td>(credential: firebase.auth.UserCredential) => void</td>
         </tr>
         <tr>
           <td>Default</td>
-          <td>Profile</td>
+          <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>signUpSuccessRoute</h5>
+      <p>A route to navigate to when a user signs up successfully</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>string | string[]</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>/</td>
         </tr>
       </tbody>
     </table>
@@ -342,6 +359,24 @@
         <tr>
           <td>Default</td>
           <td>undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="attribute-section">
+    <section class="attribute-section-header">
+      <h5>stringResources</h5>
+      <p>An object providing alternative strings for text displayed by the components</p>
+    </section>
+    <table>
+      <tbody>
+        <tr>
+          <td>Type</td>
+          <td>StringResources</td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>See <a routerLink='/string-resources' title="See separate documentation page">separate page</a></td>
         </tr>
       </tbody>
     </table>

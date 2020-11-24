@@ -17,8 +17,13 @@
     demonstrates the usage and capabilities of the library. It demonstrates the following components.
   </p>
   <ul>
-    <li>IonngxFirebaseAuthUi</li>
-    <li>IonngxFirebaseAuthAvatar</li>
+    <li>IonngxFirebaseAuthUiAvatarComponent</li>
+    <li>IonngxFirebaseAuthUiProviderBarComponent</li>
+    <li>IonngxFirebaseAuthUiProviderStackComponent</li>
+    <li>IonngxFirebaseAuthUiSignInComponent</li>
+    <li>IonngxFirebaseAuthUiSignUpComponent</li>
+    <li>IonngxFirebaseAuthUiProfileComponent</li>
+    <li>IonngxFirebaseAuthUiComponent</li>
   </ul>
 
   <h3>Installation</h3>
@@ -30,18 +35,18 @@
     the project. Follow the <a href='https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md'>Angular Fire Getting Started
   Guide</a> to setup your app.
   </p>
-
+  <h6>NB: The library is currently in BETA</h6>
   <p>
     Once your application is prepared for Angular Fire install this library using npm or yarn with one of the following
     commands:
   </p>
 
   <pre>
-    npm install @ionngx/firebase-auth-ui
+    npm install @ionngx/firebase-auth-ui@beta
     
     or
 
-    yarn add @ionngx/firebase-auth-ui  
+    yarn add @ionngx/firebase-auth-ui@beta  
   </pre>
 
   <h3>Configuration</h3>
@@ -124,7 +129,19 @@
 
   <h3>Usage</h3>
   <p>
-    The remainder of pages in this application provide guides and working examples of each component in the library. Use
-    the menu to navigate to pages of interest
+    By default Ionic generates each page in a separate module, if you stick with this pattern (we are not suggesting you don't),
+    you will need to import <em>IonngxFirebaseAuthUiModule</em> into any page
+    module and add it to the <em>imports</em> collection where you want to use components in this library
   </p>
+  <pre>
+    import {{'{'}} IonngxFirebaseAuthUiModule {{'}'}} from '@ionngx/firebase-auth-ui';
+    ...
+    @NgModule({{'{'}}
+      ...
+      imports: [IonngxFirebaseAuthUiModule.forChild()]
+      ...
+    {{'}'}}
+    )
+  </pre>
+  <p>Then you can declare the the appropriate component from this library in the host component template.  See the specific pages in this demo for more detail.</p>
 </ion-content>

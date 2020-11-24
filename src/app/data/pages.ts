@@ -9,6 +9,10 @@ export const PAGES: Page[] = [
         title: 'Configuration',
         url: '/configuration',
         icon: 'settings'
+    }, {
+        title: 'String Resources',
+        url: '/string-resources',
+        icon: 'reader'
     },
     {
         title: 'Avatar',
@@ -21,8 +25,18 @@ export const PAGES: Page[] = [
         icon: 'ellipsis-horizontal'
     },
     {
+        title: 'Provider Stack',
+        url: '/provider-stack',
+        icon: 'list'
+    },
+    {
         title: 'Sign In',
         url: '/sign-in',
         icon: 'enter'
+    },
+    {
+        title: 'Sign Up',
+        url: '/sign-up',
+        icon: 'person-add'
     }
 ];

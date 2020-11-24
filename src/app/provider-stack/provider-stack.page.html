@@ -5,13 +5,13 @@
         <ion-menu-button></ion-menu-button>
       </ion-menu-toggle>
     </ion-buttons>
-    <ion-title>Provider Bar</ion-title>
+    <ion-title>Provider Stack</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <p>
-    The Provider Bar component presents a horizontal set of buttons for each
+    The Provider Stack component presents a vertical stack of buttons for each
     provider specified in the <em>providers</em> property of your configuration
     settings. The default for this setting is <em>AuthProviderId.All</em> which
     displays a button for all providers supported by the library. By default the
@@ -21,21 +21,15 @@
   </p>
   <h3>Try It Out</h3>
   <p>
-    An instance of the Provider Bar component is declared directly below this
+    An instance of the Provider Stack component is declared directly below this
     paragraph. The attributes you can use to control it are detailed below.
     Controls below allow you to experiment with the configuration and see the
     effect.
   </p>
-  <p>
-    NB: At the time of writing the color attribute of ion buttons does not
-    update when the bound value changes. Binding works to set the color when the
-    button is created but dynamically changing it does not work.
-  </p>
-  <ionngx-firebase-auth-ui-provider-bar
+  <ionngx-firebase-auth-ui-provider-stack
     [hideEmailPasswordButton]="hideEmailPasswordButton"
-    [buttonColor]="buttonColor"
     (emailPasswordSelected)="handleEmailPasswordSelected()"
-  ></ionngx-firebase-auth-ui-provider-bar>
+  ></ionngx-firebase-auth-ui-provider-stack>
   <h4>Current Settings</h4>
   <ion-grid>
     <ion-row>
@@ -44,40 +38,14 @@
         <ion-toggle [(ngModel)]="hideEmailPasswordButton"></ion-toggle>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="4">buttonColor</ion-col>
-      <ion-col size="4">
-        <ion-select [(ngModel)]="buttonColor" disabled="true">
-          <ion-select-option value="primary">Primary</ion-select-option>
-          <ion-select-option value="secondary">Secondary</ion-select-option>
-          <ion-select-option value="tertiary">Tertiary</ion-select-option>
-          <ion-select-option value="light">Light</ion-select-option>
-          <ion-select-option value="medium">Medium</ion-select-option>
-          <ion-select-option value="dark">Dark</ion-select-option>
-          <ion-select-option value="success">Success</ion-select-option>
-          <ion-select-option value="warning">Warning</ion-select-option>
-          <ion-select-option value="danger">Danger</ion-select-option>
-        </ion-select>
-      </ion-col>
-    </ion-row>
   </ion-grid>
-  <h4>Usage</h4>
-  <p>
-    To use the Provider Bar you need to import the module for it into the module
-    containing the host component
-  </p>
+  <h4>Usage</h4>  
+  <p>This page declares the Provider Stack in the template like this</p>
   <pre>
-    import {{'{'}} ProviderBarModule {{'}'}} from '@ionngx/firebase-auth-ui';
-  </pre>
-  <p>
-    Then you can use the declare the Provider Bar in the host component template
-  </p>
-  <pre>
-    &lt;ionngx-firebase-auth-ui-provider-bar
+    &lt;ionngx-firebase-auth-ui-provider-stack
       [hideEmailPasswordButton]="hideEmailPasswordButton"
-      [buttonColor]="buttonColor"
       (emailPasswordSelected)="handleEmailPasswordSelected()"&gt;
-    &lt;/ionngx-firebase-auth-ui-provider-bar&gt;
+    &lt;/ionngx-firebase-auth-ui-provider-stack&gt;
   </pre>
   <h4>Attributtes</h4>
   <section class="attribute-section">
@@ -94,27 +62,6 @@
         <tr>
           <td>Default</td>
           <td>true</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <section class="attribute-section">
-    <section class="attribute-section-header">
-      <h5>buttonColor</h5>
-      <p>A valid Ionic theme color name</p>
-    </section>
-    <table>
-      <tbody>
-        <tr>
-          <td>Type</td>
-          <td>
-            'primary' | 'secondary' | 'tertiary' | 'light' | 'medium' | 'dark' |
-            'success' | 'warning' | 'danger'
-          </td>
-        </tr>
-        <tr>
-          <td>Default</td>
-          <td>primary</td>
         </tr>
       </tbody>
     </table>

@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { IonngxFirebaseAuthUiModule, AvatarModule } from '@ionngx/firebase-auth-ui';
+import { IonngxFirebaseAuthUiModule } from '@ionngx/firebase-auth-ui';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,8 +19,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonngxFirebaseAuthUiModule.forRoot(environment.firebaseConfig),
-    AvatarModule
+    IonngxFirebaseAuthUiModule.forRoot(environment.firebaseConfig)
   ],
   providers: [
     StatusBar,

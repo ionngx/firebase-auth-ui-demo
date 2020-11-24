@@ -27,6 +27,18 @@ const routes: Routes = [
     path: 'provider-bar',
     loadChildren: () => import('./provider-bar/provider-bar.module').then( m => m.ProviderBarPageModule)
   },
+  {
+    path: 'provider-stack',
+    loadChildren: () => import('./provider-stack/provider-stack.module').then( m => m.ProviderStackPageModule)
+  },
+  {
+    path: 'string-resources',
+    loadChildren: () => import('./string-resources/string-resources.module').then( m => m.StringResourcesPageModule)
+  },
+  {
+    path: 'sign-up',
+    loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
+  },
 ];
 
 @NgModule({

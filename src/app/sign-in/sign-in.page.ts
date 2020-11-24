@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInPage implements OnInit {
 
+  public selectedMode: 'bar' | 'stack' = 'bar';
+
   constructor() { }
 
   ngOnInit() {
