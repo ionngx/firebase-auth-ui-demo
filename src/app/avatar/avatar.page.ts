@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayNameLocation } from '@ionngx/firebase-auth-ui';
 
 @Component({
   selector: 'app-avatar',
@@ -6,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./avatar.page.scss'],
 })
 export class AvatarPage implements OnInit {
-
-  public selectedMode: 'default' | 'simple' = 'default';
-  public hideWhenAnonymous = false;
   public canSignIn = true;
   public canSignOut = true;
   public canSignUp = true;
   public canViewProfile = true;
+  public displayNameLocation = DisplayNameLocation.Below;
+  public hideWhenAnonymous = false;
+  public selectedMode: 'default' | 'simple' = 'default';
+  public showDisplayName = false;
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
-
 }

@@ -37,6 +37,8 @@
     [canSignOut]="canSignOut"
     [canSignUp]="canSignUp"
     [canViewProfile]="canViewProfile"
+    [showDisplayName]="showDisplayName"
+    [displayNameLocation]="displayNameLocation"
   >
   </ionngx-firebase-auth-ui-avatar>
   <h4>Current Settings</h4>
@@ -74,6 +76,21 @@
         <ion-toggle [(ngModel)]="canViewProfile"></ion-toggle>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col size="6" size-lg="3"> showDisplayName</ion-col>
+      <ion-col size="6" size-lg="3">
+        <ion-toggle [(ngModel)]="showDisplayName"></ion-toggle>
+      </ion-col>
+      <ion-col size="6" size-lg="3"> displayNameLocation</ion-col>
+      <ion-col size="6" size-lg="3">
+        <ion-select [(ngModel)]="displayNameLocation">
+          <ion-select-option value="left">Left</ion-select-option>
+          <ion-select-option value="right">Right</ion-select-option>
+          <ion-select-option value="above">Above</ion-select-option>
+          <ion-select-option value="below">Below</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
   </ion-grid>
   <h4>Usage</h4>  
   <p>This page declares the Avatar component in the template like this</p>
@@ -84,7 +101,9 @@
       [canSignIn]="canSignIn"
       [canSignOut]="canSignOut"
       [canSignUp]="canSignUp"
-      [canViewProfile]="canViewProfile"&gt;
+      [canViewProfile]="canViewProfile"
+      [showDisplayName]="showDisplayName",
+      [displayNameLocation]="displayNameLocation"&gt;
     &lt;/ionngx-firebase-auth-ui-avatar&gt;
   </pre>
   <h4>Attributes</h4>
